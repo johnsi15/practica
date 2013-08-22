@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Clase 6 </title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<form action="">
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="nombre">
+			<label for="apellido">Apellido</label>
+			<input type="text" name="apellido" id="apellido">
+		</form>
+
+		<form action="" class="form-search">
+			<label for="buscar">Buscar</label>
+			<input type="text" name="busca" class="search-query">
+			<button class="btn" type="Submit" >Buscar</button>
+		</form>
+
+		<form class="form-inline" action="">
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="nombre">
+			<label for="apellido">Apellido</label>
+			<input type="text" name="apellido" id="apellido">
+		</form>
+
+		<form action="" class="form-horizontal">
+			<div class="control-group">
+				<label for="nombre" class="control-label">Nombre</label>
+				<div class="controls">
+					<input type="text" id="nombre">
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="apellido" class="control-label">Apellido</label>
+				<div class="controls">
+					<input type="text" id="apellido">
+				</div>
+			</div>
+		</form>
+
+		<form action="" class="form-horizontal">
+			<input type="text" name="nombre" placeholder="Nombre">
+			<input type="password" name="contraseña">
+			<textarea name="describete" id="" cols="30" rows="10"></textarea>
+			<label for="checkbox">
+				<input type="checkbox" value="">
+				option 1
+			</label>
+			<label for="" class="radio">
+				<input type="radio" name="opcionradio" value="option1">Opcion1
+			</label>
+			<label for="" class="radio">
+				<input type="radio" name="opcionradio" value="option2">Opcion2
+			</label>
+			<select name="" id=""> <!--podemos añadir la propiedad multiple="multiple" -->
+				<option value="">Java</option>
+				<option value="">jQuery</option>
+				<option value="">PHP</option>
+				<option value="">Html5</option>
+			</select>
+		</form>
+
+		<form action="" class="form-horizontal">
+			<input type="text" name="nombre" autofocus><!--Tambien tenemos el disable -->
+		</form>
+        
+        <form action="" class="form-horizontal">
+			<div class="control-group warning">
+				<label for="warning" class="control-label">Warning</label>
+				<div class="controls">
+					<input type="text" name="nombre">
+				</div>
+			</div>
+			<div class="control-group info">
+				<label for="warning" class="control-label">Warning</label>
+				<div class="controls">
+					<input type="text" name="nombre">
+				</div>
+			</div>
+			<div class="control-group success">
+				<label for="warning" class="control-label">Warning</label>
+				<div class="controls">
+					<input type="text" name="nombre">
+				</div>
+			</div>
+			<div class="control-group error">
+				<label for="warning" class="control-label">Warning</label>
+				<div class="controls">
+					<input type="text" name="nombre">
+				</div>
+			</div>
+		</form>
+		<form action="" class="form-horizontal">
+			<div class="input-prepend">
+				<span class="add-on">@</span>
+				<input type="text" name="mail" placeholder="Email">
+			</div>
+			<div class="input-append">
+				
+				<input type="text" name="mail" placeholder="Dinero">
+				<span class="add-on">.00</span>
+			</div>
+			<div class="input-prepend input-append">
+				<span class="add-on">$</span>
+				<input type="text" name="mail" placeholder="Dinero">
+				<span class="add-on">.00</span>
+			</div>
+			<div class="input-append">
+				<input type="text">
+				<button class="btn" type="button">ir</button>
+			</div>
+		</form>
+		<form action="" class="form-horizontal">
+			 <input type="text" class="input-small">
+			 <input type="text" class="input-medium">
+			 <input type="text" class="input-large">
+			 <input type="text" class="input-xlarge">
+			 <input type="text" class="input-xxlarge">
+		</form>
+	</div>
+	  <div class="container">
+	  	 <div class="row">
+	  	 	<div class="span3">
+	  	 		<input type="text" class="span3">
+	  	 	</div>
+	  	 	<div class="sapan9">
+	  	 		<input type="text" class="span9">
+	  	 	</div>
+	  	 </div>
+	  </div>
+	  <div class="container">
+	  	 <div class="form-actions">
+	  	 	<button type="button" class="btn btn-primary">Enviar</button>
+	  	 	<button type="button" class="btn">Cancelar</button>
+	  	 </div>
+	  </div>
+	   <div class="container">
+	  	  <input type="text" name="nombre">
+	  	  <span class="help-inline">ayuda en linea</span>
+	  </div>
+	  <div class="container">
+	  	  <input type="text" name="nombre">
+	  	  <span class="help-block">ayuda en linea</span>
+	  </div>
+</body>
+</html>

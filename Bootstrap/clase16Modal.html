@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Clase 16 | Bootstrap</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="hero-unit">
+				<h1>Creando una ventana Modal</h1>
+				<small>Nuestra primera ventanita Modal</small>
+			</div>
+			<a href="#mimodal" role="button" class="btn" data-toggle="modal">Inicia Sesión</a>
+			 <div id="mimodal" class="modal hide fade">
+			 	<div class="modal-header">
+			 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+			 	    <h3>Header modal</h3>
+			 	</div>
+			 	<div class="modal-body">
+			 		Este es el cuerpo del modal
+			 	</div>
+			 	<div class="modal-footer">
+			 		<a href="#" class="btn" data-dismiss="modal">Salir</a>
+			 		<a href="#" class="btn btn-primary">Guardar</a>
+			 	</div>
+			 </div>
+	    </div>
+	</header>
+</body>
+</html>
