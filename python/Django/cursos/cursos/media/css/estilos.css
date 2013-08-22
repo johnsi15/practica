@@ -1,0 +1,22 @@
+body{
+	background: rgba(25,25,25,0.8);
+}
+
+.botones{
+	font-size: 29px;
+	text-align: center;
+}
+
+.botones a{
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 4px;
+	color: black;
+	padding: 4px 12px 4px 12px;/*Ar,De,Ab,Iz*/
+	text-decoration: none;
+}
+
+#contenido{
+	color: white;
+	font-size: 25px;
+	text-align: center;
+}

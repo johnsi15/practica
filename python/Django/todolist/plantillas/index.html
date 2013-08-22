@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<form action="" method="POST">{%csrf_token%}
+
+	{{todo_form.as_p}}
+	<h4>Tareas o Articulos</h4>
+	
+	{{ todo_articulo_formset.management_form }}
+	
+	 {% for form in todo_articulo_formset.forms %}
+   
+      {{ form.as_p }}
+    
+    {% endfor %}
+    
+	<input type="submit" class="btn" name="" value="Grabar" placeholder="Culaquier cosa!">
+</form>
+
+{% for dato in todo %}
+	<div class="span4">
+		<h2>{{dato}}</h2>
+		<p><a class="btn" href="/ver_articulo/{{dato.id}}">Ver tareas del proyecto &raquo;</a></p>
+	</div><!--/span-->
+{% empty %}
+	<p>No hay datos</p>
+{% endfor %}
+	
+{% endblock contenido %}

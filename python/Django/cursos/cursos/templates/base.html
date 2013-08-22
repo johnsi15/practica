@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock title %}</title>
+	<meta name="descripcion" content="{% block descripcion %} {% endblock descripcion %}">
+	<link rel="stylesheet" href="/media/css/estilos.css">
+	<style>
+		h1{
+		   text-align: center;
+		   font-size: 50px;
+		   color: rgba(190,250,195,0.8);	
+		}
+	</style>
+
+</head>
+<body>
+	<header>
+		<h1>Aprendiendo <span>Django + Python</span></h1>
+		<p class="botones">
+			<a href="{% url index %}">Mostrar</a>
+			<a href="{% url agregar %}">Agregar</a><!--aca va el nombre que colocamos en la url-->
+		</p>
+	</header>
+	<section id="contenido">
+		{% block content %} 
+		{% endblock content %}
+	</section>
+</body>
+</html>

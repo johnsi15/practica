@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Mostrar Producto
+{% endblock title%}
+
+{% block descripcion %}
+	Descripcion del Sitio
+{% endblock descripcion %}
+
+{% block content %}
+	{{ user.username|default:"Anonimo" }} <br><br>
+	{% for p in producto %}
+		{{ p.nombre }} - {{ p.categoria.nombre}}
+		<br>
+		{{ p.descripcion }} <br>{% if user.is_authenticated %}
+		<p class="botones">
+			<a href="{% url actualizar p.id %}">Actualizar</a>
+		</p>
+		{% endif %}<br>
+		{% empty %}
+			No hay Productos
+	{% endfor %} 
+{% endblock content%}
+
+
