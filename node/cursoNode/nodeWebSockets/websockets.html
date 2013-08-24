@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <title>WebSockets</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 	<body>
 		<input id="mensaje" type="text" autofocus><br>
@@ -12,8 +11,8 @@
 		<div id="resultados"></div>
 
 		<script type="text/javascript">
-			$(document).ready(function(){
-				var resultados = $('#resultados').val();
+
+				var resultados = document.getElementById('resultados');
 				websocket = new WebSocket('ws://echo.websocket.org');
 
 				/*esto es websockets nativo*/
@@ -24,13 +23,9 @@
 					resultados.innerHTML += '<br>'+mensaje.data;
 				});
 
-				$('#enviar_mensaje').click(function(){
-					var valor = $('#mensaje').val();
-					console.log("poraca esta pasando"+valor);
-					websocket.send(valor);
-					websocket.append(valor);
+				document.getElementById('enviar_mensaje').addEventListener('click', function(){
+					websocket.send(document.getElementById('mensaje').value);
 				});
-			});
 		</script>
 	</body>
 </html>

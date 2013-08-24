@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Socket.IO</title>
+    <script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+</head>
+	<body>
+		<input id="mensaje" type="text">
+		<button id="enviar_mensaje">Click</button>
+		<hr>
+		<div id="resultados"></div>
+
+		<script type="text/javascript">
+			var resultados = document.getElementById('resultados');
+			websocket = io.connect('http://localhost:8080');
+
+			websocket.on('connect', function(){
+				resultados.innerHTML = 'Conectado';
+			});
+			/*WebSockets Nativo*/
+			/*websocket.on('message', function(mensaje){
+				resultados.innerHTML += '<br>'+mensaje;
+			});
+			document.getElementById('enviar_mensaje').addEventListener('click', function(){
+				websocket.send(document.getElementById('mensaje').value);
+			});
+			*/
+			/* WebSockets Socket.IO */
+			websocket.on('mensajeServer', function(mensaje){
+				resultados.innerHTML += '<br>'+mensaje;
+			});
+			document.getElementById('enviar_mensaje').addEventListener('click', function(){
+				websocket.emit('mensajeCliente', document.getElementById('mensaje').value);
+			});
+		</script>
+	</body>
+</html>
