@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WebSockets</title>
+</head>
+<body>
+
+<input id="mensaje" type="text"><br>
+<button id="enviar_mensaje">Click</button>
+<hr>
+<div id="resultados"></div>
+
+<script type="text/javascript">
+	var resultados = document.getElementById('resultados');
+
+	websocket = new WebSocket('ws://echo.websocket.org');
+
+	// addEventListener - attachEvent
+	websocket.addEventListener('open', function(){
+		resultados.innerHTML = 'Conectado';
+	});
+	websocket.addEventListener('message', function(mensaje){
+		resultados.innerHTML += '<br>'+mensaje.data;
+	});
+
+	document.getElementById('enviar_mensaje').addEventListener('click', function(){
+		websocket.send(document.getElementById('mensaje').value);
+	});
+</script>
+</body>
+</html>
