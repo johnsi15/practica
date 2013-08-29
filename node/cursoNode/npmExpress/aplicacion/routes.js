@@ -1,5 +1,13 @@
-//var models = require('./models');
+var models = require('./models');
 
 exports.index = function(req, res){
-	res.render('index');
+	res.render('index', {title:'Aplicacion de ejemplo'}, twits:models.twits);
+};
+
+exports.nuevo = function(req, res){
+	if(req.body && req.body.twit){
+
+	}else{
+		res.send(404, 'Not found!');
+	}
 };

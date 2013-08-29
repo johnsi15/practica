@@ -17,3 +17,11 @@ app.configure(function(){
 
 /* Rutas */ /* POST - GET - PUT - DELETE - OPTIONS - HEAD */
 app.get('/', routes.index);
+app.post('/nuevo', routes.nuevo);
+
+/* Socket.IO */
+io.sockets.on('connection', function(socket){
+	socket.on('nuevo', function(twit){
+		io.sockets.emit('insertar twit', twit);
+	});
+});
