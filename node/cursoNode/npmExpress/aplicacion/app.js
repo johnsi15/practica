@@ -11,8 +11,8 @@ server.listen(8080);
 app.configure(function(){
 	app.set('view engine', 'ejs');
 	app.set('views', __dirname+'/views'); //C:\Users\LARED.COM\Documents\GitHub\practica\node\cursoNode\npmExpress\aplicacion\views
-	//app.use(express.bodyParser());
-	//app.use('/static', express.static(__dirname+'/public'));
+	app.use(express.bodyParser());
+	app.use('/static', express.static(__dirname+'/public'));
 });
 
 /* Rutas */ /* POST - GET - PUT - DELETE - OPTIONS - HEAD */

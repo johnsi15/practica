@@ -11,7 +11,7 @@ server.listen(8080);
 app.configure(function(){
 	app.set('view engine', 'ejs');
 	app.set('views', __dirname+'/views') // C:/Users/Samuel BR/Desktop/NodeJS/aplicacion/views
-	app.use(express.bodyParser());
+	app.use(express.bodyParser());//nos permite parsear la informacion que biene por POST 
 	app.use('/static', express.static(__dirname+'/public'));
 });
 

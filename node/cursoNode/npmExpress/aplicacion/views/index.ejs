@@ -7,13 +7,16 @@
 </head>
 	<body>
 		<h1>Inicio</h1>
-		<form method="post" action="/nuevo" id="formulario">
+		<form id="formulario" method="post" action="/nuevo">
 			<input type="text" name="twit">
 			<button type="submit">Enviar</button>
 		</form>
 		<hr>
 		<div id="twits">
-			
+			<% for(var i=0; i<twits.length; i++){ %>
+				<p><%= twits[i]%> </p>
+			<% }%>
 		</div>
+		<script type="text/javascript" src="/static/funciones.js"></script>
 	</body>
 </html>
