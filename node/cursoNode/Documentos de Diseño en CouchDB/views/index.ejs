@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Aplicacion</title>
+</head>
+<body>
+
+	<h3>Mi Aplicacion con CouchDB</h3>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Telefono</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for (var i=0; i<todos.length; i++){ %>
+				<tr>
+					<td><a href="/detalle/<%= todos[i].value._id %>"><%= todos[i].value.nombre %></a></td>
+					<td><%= todos[i].value.telefono %></td>
+				</tr>
+			<% } %>
+		</tbody>
+	</table>
+
+</body>
+</html>
