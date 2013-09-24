@@ -16,3 +16,6 @@ app.get('/', routes.index);
 
 app.get('/agregar', routes.agregar);
 app.post('/agregar', routes.add);
+
+app.get('/editar/:id', routes.editar);
+app.post('/editar/:id', routes.edit);

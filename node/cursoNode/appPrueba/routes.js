@@ -47,3 +47,36 @@ exports.add = function(req, res){
 		});
 	}
 };
+
+exports.editar = function(req, res){
+	if(req.params.id){
+		producto.get(req.params.id, function(result){
+			if(result._id){
+				res.render('editar', {producto:result});
+			}else{
+				res.send(404, 'El producto no existe');
+			}
+		});
+	}else{
+		res.send(500, 'Debe especificar un ID');
+	}
+};
+
+exports.edit = function(req, res){
+	if(req.params.id && req.body){
+		var post = req.body; 
+
+		producto.get(req.params.id, function(result){
+			post.created = result.created;//no ta no se para que es leer
+
+			producto.put(req.params.id, post, function(result){
+				if(result.ok){
+					res.redirect('/');
+				}else{
+					res.send(500, 'Algo ha ido mal!');
+				}
+			});
+			
+		});
+	}
+};
