@@ -80,3 +80,17 @@ exports.edit = function(req, res){
 		});
 	}
 };
+
+exports.delete = function(req, res){
+	if(req.params.id){
+		producto.delete(req.params.id, function(result){
+			if(result.ok){
+				res.redirect('/');
+			}else{
+				res.send(500, 'Algo ha ido mal...');
+			}
+		});
+	}else{
+		res.send(500, 'Debe especificar un ID');
+	}
+};

@@ -11,11 +11,13 @@ app.configure(function(){
 	app.use(express.bodyParser());
 });
 
-
+/*Rutas */ 
 app.get('/', routes.index);
 
 app.get('/agregar', routes.agregar);
 app.post('/agregar', routes.add);
+
+app.post('/delete/:id', routes.delete);
 
 app.get('/editar/:id', routes.editar);
 app.post('/editar/:id', routes.edit);
