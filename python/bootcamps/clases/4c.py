@@ -1,8 +1,8 @@
 #formateado con variables
-agenda = open("agenda.csv",'w');
+agenda = open("agenda.csv",'a');
 
 #print(agenda.read())
-agenda.truncate()
+#agenda.truncate()
 
 nombre = raw_input("Introduce el nombre de contacto: ")
 telefono = raw_input("Introduce telefono: ")
@@ -14,3 +14,4 @@ agenda.write(",")
 agenda.write(telefono)
 agenda.write(",")
 agenda.write("\n")
+agenda.close()

@@ -5,8 +5,7 @@ def bienvenidos():
 	print("Seleccione una opcion")
 	print("1. Insertar o agregar dato a la agenda")
 	print("2. Listar los datos de la agenda")
-
-bienvenidos()
+	print("3. Buscar por nombre")
 
 def escribir():
 	print("Usted selecciono agregar a la agenda")
@@ -26,12 +25,12 @@ def escribir():
 def listar(fin):
 	print("Usted selecciono listar datos de la agenda")
 	agenda = open("agenda.csv")
-	numero = 0
+	#numero = 0
 	#mientras que numero sea menor que 2 ejecute esto
 	for i in range(1,fin):
 		lectura = agenda.readline()
 		print(lectura.replace(",","\t\t"))
-		numero = numero + 1
+		#numero = numero + 1
 
 	print("proceso terminado")
 	agenda.close()
@@ -39,16 +38,13 @@ def listar(fin):
 def miError():
 	print("Esa opcion no existe")
 
-opcion = raw_input("> ")
+def buscar(nombre):
+	print("buscando")
+	agenda = open("agenda.csv")
+	for i in range(1,30):
+		lectura = agenda.readline()
+		partido = lectura.split(',')
+		if nombre == partido[1]:
+			print(partido[2])
 
-if opcion == "1":
-	escribir()
-elif opcion == "2":
-	print("Cuantos registros quieres ver: ")
-	cant = raw_input("> ")
-	cantidad = int(cant)
-	print cantidad
-	listar(cantidad + 1)
-else:
-	miError()
-#control de flujo
+	agenda.close()
