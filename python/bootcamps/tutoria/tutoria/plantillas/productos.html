@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Productos</title>
+</head>
+<body>
+
+<h1>Productos</h1>
+
+<hr>
+
+{% for producto in productos %}
+	<p>{{ producto.nombre }} - {{ producto.descripcion }} - {{ producto.precio }}</p>
+{% endfor %}
+
+</body>
+</html>
